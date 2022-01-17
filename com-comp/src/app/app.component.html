@@ -1,0 +1,29 @@
+<div class="container">
+  <u>
+    <h3>This is how I want to make communications between components</h3>
+  </u>
+  <br>
+  <app-cockpit (serverCreated)="onServerAdded($event)" (bluePrintAdded)="onBluePrintAddedd($event)"></app-cockpit>
+  <br>
+  <div class="row">
+    <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"></app-server-element>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="mx-auto l-12">
+      <button class="btn btn-success" (click)="onStartCount()">START GAME</button>
+      <!-- <button class="btn btn-danger" (click)="onStopCount()">STOP GAME</button> -->
+      <button class="btn btn-danger" (click)="onRefresh()">RESET GAME</button>
+
+    </div>
+
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12" >
+        <app-even *ngFor="let evenNum of even" [evenNumber]="evenNum"></app-even>
+        <app-odd *ngFor="let oddNum of odd" [oddNumber]="oddNum"></app-odd>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-primary">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix" *ngFor="let item of recipies">
+            <div class="float-xl-right" >
+                <h4 class="list-group-item-heading">{{item.name}}</h4>
+                <p class="list-group-item-text">{{item.description}}</p>
+            </div>
+            <span class="badge badge-pill badge-light">
+               <img src="{{item.imgPath}}" alt="Image not found" class="img-responsive" style="max-height:100px;text-align: center; max-width: 100px;">
+            </span>
+        </a>
+    </div>
+</div>
+<div class="col-md-12">
+    <app-recipe-item></app-recipe-item>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <input type="text" class="form-control" [(ngModel)]="serverName" placeholder="Enter here...">
+        <span [ngStyle]="{'background-color':getColor(),'color':'white'}" *ngIf="serverCreated; else noServer">Server
+            was created with name
+            {{serverName}}</span>
+        <ng-template #noServer>
+            <span [ngStyle]="{'background-color':getColor(),'color':'white'}">No server was created</span>
+        </ng-template>
+        <hr>
+
+        <button class="btn btn-primary" [disabled]="serverName===''" (click)="addServer()">Add server</button>
+        <button class="btn btn-success" [disabled]="serverName===''" (click)="onReset()">Reset</button><br>
+
+    </div>
+    <footer class="page-footer font-small blue pt-4">
+        <b>
+            <button class="btn btn-info" (click)="showDate()">Show Date</button>
+            <div [ngStyle]="{'display':'flex'}" class="footer-copyright text-center py-3">{{time}}</div>
+            <div [ngStyle]="{'background-color':'black','color':'white'}" class="footer-copyright text-center py-3">{{date}}</div>
+
+        </b>
+    </footer>
+    <hr>
+    <h3>Chapter-2</h3>
+    <div class="mx-auto">
+        <button class="btn btn-danger" (click)="isToggle()">Display details</button><br>
+        <b><p *ngIf="showSecret"> Developed with &hearts; by Ashutosh Satapathy</p></b>
+        <span [ngStyle]="{'background-color':x>=5?'maroon':'black','color':'white'}" *ngFor="let x of logItems">{{x}} <br></span>
+    </div>
+
+</div>
+<div class="container">
+    <app-cockpit></app-cockpit>
+<hr>
+<div class="row">
+    <div class="com-xs-12">
+        <app-server-element *ngFor="let serverElement of serverElements" 
+        [srvElement]="serverElement"></app-server-element>
+    </div>
+</div>
+</div>

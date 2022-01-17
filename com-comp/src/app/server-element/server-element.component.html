@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+    <div class="panel-heading" [ngStyle]="{'color':'red'}" *ngIf="element.type==='server'"><b>{{element.name}}</b></div>
+    <div class="panel-body" *ngIf="element.type==='server'"><i>{{element.content}}</i></div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"[ngStyle]="{'color':'blue'}" *ngIf="element.type==='blueprint'" ><b>{{element.name}}</b></div>
+    <div class="panel-body" *ngIf="element.type==='blueprint'"><i>{{element.content}}</i></div>
+</div>
