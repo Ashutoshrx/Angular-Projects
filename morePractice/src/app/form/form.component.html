@@ -1,0 +1,29 @@
+<div>  
+    <div [ngStyle]="{'border':'solid red','width':'fit-content','padding':'3px'}">
+        <form [formGroup]="loginForm1">
+            <input type="text" placeholder=" Name" required formControlName="name">
+            <br><br>
+            <input type="email" placeholder=" Email" required formControlName="pass">
+            <br><br>
+            <input type="number" placeholder="Ph.No" required formControlName="phNo">
+            <br><br>
+            
+        </form>
+    </div> 
+    <br>
+    <div [ngStyle]="{'border':'solid red','width':'fit-content','padding':'3px'}">
+        <form [formGroup]="loginForm2" >
+            <input type="text" placeholder=" Name"  formControlName="name">
+            <br><br>
+            <input type="email" placeholder=" Email"  formControlName="pass">
+            <br><br>
+            <input type="number" placeholder="Ph.No"  formControlName="phNo">
+            <br><br>
+        </form>
+    </div> 
+    <br>
+    <button (click)="onSubmit()">Submit</button>
+    <button (click)="onSwap()" [disabled]="this.loginForm1.value.name===this.loginForm2.value.name &&
+    this.loginForm1.value.pass===this.loginForm2.value.pass &&
+    this.loginForm1.value.phNo===this.loginForm2.value.phNo">Swap</button>
+</div>

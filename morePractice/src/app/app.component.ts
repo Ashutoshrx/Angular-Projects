@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  addedFeature:string='home';
-
-  addFeature(featureData:string){
-      this.addedFeature=featureData;
-  }
+  title = 'morePractice';
 }
